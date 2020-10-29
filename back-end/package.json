@@ -1,0 +1,25 @@
+{
+    "name": "cmt112-coursework2",
+    "version": "1.0.0",
+    "description": "Server for Coursework 2 for CMT112",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.cs.cf.ac.uk:scm2mjc/cmt112-coursework2.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.16.4",
+        "http-errors": "^1.7.1",
+        "sequelize": "^4.44.3"
+    },
+    "devDependencies": {
+        "sqlite3": "^4.2.0"
+    }
+}

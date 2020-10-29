@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css">
+      <meta name= "viewport" content="width=device-width, initial scale=1.0">
+
+      <meta charset='UTF-8'>
+      <title>University of PontyBridge</title>
+  </head>
+    <body class="animate">
+      <header class="staff-header-container">
+          <!-- cotains the interractive text appearing on the header when program is run -->
+              <div class="unbreakable-container">
+                <div class="unbreakable">
+                  <span class="un">University of PontyBridge</span>
+                </div>
+                <div class="ks">Library Services</div>
+              </div>
+              <div><a href ="index.html" class="btn-5">Home</a></div>
+      </header>
+      <section class="menu-blocks">
+          <!--* The adopted and referenced menu selection-tabs including hover transition effect has been published by:
+                  * Author: Nathan Long
+                  * Retrieval date: 21/12/19,
+                  * URL: https://codepen.io/nathanlong/pen/MwOpxj
+                  * Implimentation comments divided between HTML and CSS files
+                  -[ADOPTED and REFERENCED CODE START]-->
+          <nav>
+            <ul>
+              <li><a href="user.html" data-hover="users section">users section</a></li>
+              <li><a href="loans.html" data-hover="loans section">loans section</a></li>
+              <li><a href="books.html" data-hover="books section">books section</a></li>
+            </ul>
+          </nav>
+        </section>
+          <!-- [ADOPTED and REFERENCED CODE END] -->
+
+<!--  ¬¬¬¬¬¬¬¬¬¬SEARCH FOR A USER TABLE¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-->
+      <section class="container-table">
+        <!--* The adopted and referenced This table is minimalist with scrool bars appearing when necessary and includes unique checkbox containts-editable fields including .js search bar. It's also responsive scrollable instead- stretched over the page. This table will filter rows based on search bar entries using Light Javascript Table Filter published by:
+                * Author: Drew
+                * Retrieval date: 21/12/19
+                * URL: https://codepen.io/DrewRyan/details/YZxYER
+                * Implimentation comments divided between HTML and CSS files
+                -[ADOPTED and REFERENCED CODE START]-->
+          <!--  Introduction  -->
+          <h1 class="special-font">Users Section</h1>
+          <h2>Search for user: by name or barcode</h2>
+          <!--  Search Bar  -->
+          <div class="form-control">
+            <label><i class="icon-search"></i></label>
+            <!-- The search bar checks Name and barcode, submit button in the table and shows matches. -->
+            <input id="SearchTitle" class="table-filter" type="search" data-table="advanced-web-table" placeholder="Name">
+            <input id="SearchAuthors" class="table-filter" type="search" data-table="advanced-web-table" placeholder="Barcode">
+            <button id="searchBookSubmit">Search</button>
+          </div>
+          <!--  Table  -->
+          <div class="table-responsive">
+
+            <table id="ordering-table" class="advanced-web-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Barcode</th>
+                  <th>MemberType</th>
+                </tr>
+              </thead>
+              <!-- added to filter searches -->
+              <tbody id="your-table-body-id">
+              </tbody>
+            </table>
+          </div>
+        </section>
+<!-- `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` -->
+
+<!--  ¬¬¬¬¬¬¬¬¬¬ADD A USER TABLE¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-->
+<!-- this table has been reconstruced based on the above one to add new books on loan by placing four placeholders for required information in order to proceed the operation-->
+      <section class="add-book-table">
+              <!--  Introduction  -->
+              <h1>Add a User</h1>
+              <!--  Table  -->
+              <table class="table-responsive">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Barcode</th>
+                      <th>Member Type</th>
+                      <th>Add a User</th>
+                    </tr>
+                  </thead>
+                  <tbody class="data-table">
+                    <tr>
+                      <td>
+                          <input class="addBookInput" type='text' placeholder="Name">
+                      <td>
+                          <input class="addBookInput" type='text' placeholder="Barcode">
+                      <td>
+                        <!--* The adopted and referenced menu selection-tabs including hover transition effect has been published by:
+                                * Author: Tristan White
+                                * Retrieval date: 6/1/19,
+                                * URL: https://codepen.io/triss90/pen/XNEdRe
+                                * Implimentation comments divided between HTML and CSS files
+                                -[ADOPTED and REFERENCED CODE START]-->
+                        <!-- for='author add_user-name -->
+                        <!-- radio buttons has been implemented, what give ability choose between users (staff/stundent) it will allow to add a user accordingly -->
+                            <div class="toggle-button toggle-button--taivas">
+                              <!-- css functionalty attched to these classes  -->
+                              <!-- id toggleButton assigned to display the right radio button when selected  -->
+                              <input class="addBookInput" value="Staff" id="toggleButton10" name="radio4" type="radio">
+                              <label for="toggleButton10" data-text="Staff"></label>
+                              <div class="toggle-button__icon"></div>
+                            </div>
+                            <div class="toggle-button toggle-button--taivas">
+                              <input class="addBookInput" value="Student" id="toggleButton11" name="radio4" type="radio">
+                              <label for="toggleButton11" data-text="Student"></label>
+                            <div class="toggle-button__icon"></div>
+                      </div>
+                      </td>
+                      <td>
+                            <!-- adds a new loan into database -->
+                          <button id="addBookSubmit">Submit</button>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+        </section>
+      <!-- [ADOPTED and REFERENCED CODE END] -->
+<!-- `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` -->
+
+
+<!--  ¬¬¬¬¬¬¬¬¬¬UPDATE A USER TABLE¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-->
+<!-- this table has been reconstruced based on the above one to add new books on loan by placing four placeholders for required information in order to proceed the operation-->
+      <section class="add-book-table">
+              <!--  Introduction  -->
+              <h1>Update a User’s Name or Member Type</h1>
+              <!--  Table  -->
+              <table class="table-responsive">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Barcode</th>
+                      <th>Member Type</th>
+                      <th>Update a User</th>
+                    </tr>
+                  </thead>
+                  <tbody class="data-table">
+                    <tr>
+                      <td>
+                          <input id="UpdateID" type='text' placeholder="ID">
+                      <td>
+                          <input class="UpdateInput" type='text' placeholder="Name">
+                      <td>
+                         <input class="UpdateInput" type='text' placeholder="Barcode">
+                     <td>
+                        <!--* The adopted and referenced menu selection-tabs including hover transition effect has been published by:
+                                * Author: Tristan White
+                                * Retrieval date: 6/1/19,
+                                * URL: https://codepen.io/triss90/pen/XNEdRe
+                                * Implimentation comments divided between HTML and CSS files
+                                -[ADOPTED and REFERENCED CODE START]-->
+                        <!-- for='author add_user-name -->
+                        <!-- radio buttons has been implemented, what give ability choose between users (staff/stundent) it will allow to add a user accordingly -->
+                            <div class="toggle-button toggle-button--taivas">
+                              <!-- css functionalty attched to these classes  -->
+                              <input class="UpdateInput" value="Staff" id="toggleButton12" name="radio4" type="radio">
+                              <label for="toggleButton12" data-text="Staff"></label>
+                              <div class="toggle-button__icon"></div>
+                            </div>
+                            <div class="toggle-button toggle-button--taivas">
+                              <!-- id toggleButton assigned to display the right radio button when selected  -->
+                              <input class="UpdateInput" value="Student" id="toggleButton13" name="radio4" type="radio">
+                              <label for="toggleButton13" data-text="Student"></label>
+                            <div class="toggle-button__icon"></div>
+                      </div>
+                      </td>
+                      <td>
+                            <!-- adds a new loan into database -->
+                          <button id="UpdateSubmit">Submit</button>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+        </section>
+      <!-- [ADOPTED and REFERENCED CODE END] -->
+<!-- `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` -->
+
+<!--  ¬¬¬¬¬¬¬¬¬¬REMOVE A USER TABLE¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-->
+        <!--*   This table s the main table of the building system and it has been ammended this time to delete the user. The adopted and referenced This table is minimalist with scrool bars appearing when necessary and includes unique checkbox containts-editable fields including .js search bar. It's also responsive scrollable instead- stretched over the page. This table will filter rows based on search bar entries using Light Javascript Table Filter published by:
+                * Author: Drew
+                * Retrieval date: 21/12/19
+                * URL: https://codepen.io/DrewRyan/details/YZxYER
+                * Implimentation comments divided between HTML and CSS files
+                -[ADOPTED and REFERENCED CODE START]-->
+          <!--  Introduction  -->
+      <section class="deleteeeee add-book-table">
+                <!--  Introduction  -->
+                <h1>Remove a User</h1>
+                <!--  Table  -->
+                <table class="table-responsive">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Remove a User</th>
+                      </tr>
+                    </thead>
+                    <tbody class="data-table">
+                      <tr>
+                        <td>
+                            <input class="deleteBookInput" type='text' placeholder="User ID">
+                        </td>
+                        <td>
+                          <!-- button confirms delete of the selected user -->
+                            <button id="SubmitDeleteBook">Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+          </section>
+          <!-- [ADOPTED and REFERENCED CODE END] -->
+<!-- `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` -->
+
+      <footer class="interactive">
+        <!--* The adopted and referenced animated footer line has been published by:
+                * Author: Manuel Pinto
+                * Retrieval date: 23/12/19,
+                * URL: https://codepen.io/kryvonos_v/pen/zXKYvw
+                * Implimentation comments divided between HTML and CSS files
+                -[ADOPTED and REFERENCED CODE START]-->
+        <div class="background">
+            <div class="container-line">
+              <div class="marquee">
+                <div class="marquee-inner">
+                  <p class="marquee-line">Welcome to a desirable locally global University</p>
+                  <p class="marquee-line">Welcome to a desirable locally global University</p>
+                </div>
+            </div>
+          </div>
+          <!-- [ADOPTED and REFERENCED CODE END] -->
+        </div>
+      </footer>
+
+      <script src="userFuncs.js"></script>
+    </body>
+</html>

@@ -1,0 +1,804 @@
+body {
+  color: #665;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial";
+  font-size: 16px;
+  margin: 0;
+}
+
+/* !!!!! Important- to create the layout for the whole website, grid-areas have been applied !!!!! */
+
+/* #######################INDEX HTML START############################################################# */
+/************************************HEADER CONTAINER-START**********************/
+.header-container {
+  background-color: #9A252312;
+  padding: 1.5vw;
+}
+
+/*interactive-uni-name-*/
+
+/* Bellow described responise interative text lines used to create the <header> container CSS properties.
+ * Author: "Speckyboy",
+ * date accessed: [4-1-20],
+ * Source: https://speckyboy.com/css-javascript-text-animation-snippets/
+ * See further comments for adaptation. All property values have been adapted to match the website's specifications.
+ [[REFERENCED CODE START]] */
+
+.unbreakable {
+    line-height: 1;
+    letter-spacing: -.07em;
+    color: #fff;
+}
+
+.ks {
+    font-size: 45px;
+    line-height: 1;
+    margin-top: -11px;
+    /* to prevent interative elements from crashing while using on various web browsers*/
+            transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 3s;
+            transform: translateX(-1000%);
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: #fc0;
+}
+
+.animate .ks {
+    transform: translateX(0);
+}
+
+span {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.un {
+    transition: all .3s ease-in-out .7s;
+    letter-spacing: -.07em;
+}
+
+.animate .un {
+    font-size: 40px;
+    transform: scale(1.5,1.5);
+    opacity: 1;
+}
+/* [[REFERENCED CODE END]] */
+
+/* * The adopted and referenced background animation has been published by:
+* Author: Manuel Pinto
+* Retrieval date: 21/12/19,
+* URL: https://codepen.io/P1N2O/pen/pyBNzX
+* Implimentation comments divided between HTML and CSS files
+-[ADOPTED and REFERENCED CODE START] */
+
+.ba {
+  animation:slide 5s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #9A55B2 50%, #791B99 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+/*create the animation to move the background position which slowly transforms color. and transforms it back during animation time */
+.ba2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.ba3 {
+  animation-duration:5s;
+}
+/* transforms static background into pure CSS animation*/
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+/* [ADOPTED and REFERENCED CODE END] */
+
+/************************************ HEADER-CONTAINER-END**********************/
+
+/************************************TITLE-IN-CONTAINER-START********************/
+/* The adopted and referenced menu selection-tabs including hover transition effect has been published by:
+Author: Nathan Long
+Retrieval date: 21/12/19,
+URL: https://codepen.io/nathanlong/pen/MwOpxj
+Implimentation comments divided between HTML and CSS files
+[ADOPTED and REFERENCED CODE START] */
+
+.title-in-container {
+  font-size: 1.2vw;
+  color: #000000;
+  display: grid;
+  padding: 1.5vw;
+  grid-template-columns: 1fr 1fr; /* divide into 2 fractions, to place the items accordingly*/
+  grid-template-areas: /* each must be given the authentic name to associate to particular grid item*/
+  'container container2';
+}
+
+.container {
+ display: grid;
+ text-align: justify;
+}
+
+.container2 {
+  margin-top: 5vw;
+  display: grid;
+  text-align: justify;
+}
+
+/* Set a style for all buttons */
+button {
+ background-color: #4CAF50;
+ color: white;
+ padding: 14px;
+ margin: 5px 0;
+ border: none;
+ cursor: pointer;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+ opacity: 0.7;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 600px) {
+ span.psw {
+   display: block;
+}
+}
+}
+
+/**************** Responsive Image Carousel Slideshow - start***************/
+/* The adopted and referenced carousel image player/slideshow has been published by:
+Author: Anca Spatariu,
+Retrieval date: 21/12/19,
+URL: https://codepen.io/ancaspatariu/pen/WpQYOP?fbclid=IwAR1v-acBZM2SesSi8DIhhYYtlPV7R46RDOgOpTziTTNCy7GA3wbRZfZd4F4
+Implimentation comments divided between HTML and CSS files
+[ADOPTED and REFERENCED CODE START] */
+/*represet the content and images to create picture galleries */
+.carousel {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 395px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    border: 3px solid #f1f1f1;
+}
+
+.slides {
+    user-select: none;
+    transition: all .7s ease-in-out;
+}
+
+ul.slides input {
+    display: none;
+}
+
+.slide-container {
+    display: block;
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}
+
+.slide-image img {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+/*  fitted in control the position of the carousel. */
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 350px;
+    color: #fff;
+}
+/* allows to  alter the slide button position relative to its current position */
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+/* dots on the bottom of the image slider to make it clear which picture in a row is displayed */
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block;
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3 {
+	opacity: 1;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+/* [ADOPTED and REFERENCED CODE END] */
+
+/************************************ title-in-container--end**********************/
+
+/* #######################INDEX HTML END############################################################### */
+
+/* #######################BOOKS HTML START############################################################# */
+
+/* created for a purpose to href connect all menu pages with home page */
+.btn-5{
+  font-size: 12px;
+  color: #fff;
+  background-color: #4CAF50;
+  text-decoration: none;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.btn-5:hover {
+  opacity: 0.5;
+}
+
+.staff-header-container {
+  grid-template-columns: 10fr 1fr;
+  background-color: #9A252312;
+  display:grid;
+  padding: 1.5vw;
+}
+
+/************************************MENU-BLOCKS---START******************************/
+/* The adopted and referenced menu selection-tabs including hover transition effect has been published by:
+Author: Nathan Long
+Retrieval date: 21/12/19,
+URL: https://codepen.io/nathanlong/pen/MwOpxj
+Implimentation comments divided between HTML and CSS files
+[ADOPTED and REFERENCED CODE START] */
+
+.menu-blocks {
+  display:grid;
+  max-width: 100%;
+  padding-left: 17.8vw;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+/* transition is the key note, which allow CSS transitions and change property values in a timely manner from one value to another */
+nav ul li a {
+  background-color: #fc0;
+  font-weight: 700;
+  display: inline-block;
+  padding: 1rem;
+  color: #665;
+  text-decoration: none;
+  transition: transform 0.3s ease 0s;
+  transform-origin: 50% 0px 0px;
+  transform-style: preserve-3d;
+}
+
+/* transition effect to a button on hover */
+nav ul li a:hover {
+  background: #fff;
+  color: #000;
+  transform: rotateX(90deg) translateY(-22px);
+}
+/* transition property allows to change values over a specified duration */
+nav ul li a::before {
+  padding: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  background: none repeat scroll 0% 0% #FF005B;
+  color: #FFF;
+  content: attr(data-hover);
+  transition: 0.3s ease 0s;
+  transform: rotateX(-90deg);
+  transform-origin: 50% 0px 0px;
+}
+
+/***************GENERAL****************/
+
+/* makes the item responsive and fit in the screen */
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+/* [ADOPTED and REFERENCED CODE END]  */
+
+/************************************CONTAINER-TABLE---START******************************/
+/* The adopted and referenced all tables over three pages: books/users/loans have been amendemended and based on this table published by:
+Author: Drew
+Retrieval date: 29/12/19,
+URL: https://codepen.io/DrewRyan/details/YZxYER
+Implimentation comments divided between HTML and CSS files
+[ADOPTED and REFERENCED CODE START] */
+
+.container-table, .add-book-table {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1170px;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vw;
+}
+
+.special-font{
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #800080;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-radius: 3px;
+  color: #665;
+  display: table;
+  font-size: 15px;
+  max-width: 100%;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+}
+
+table td,
+table th {
+  border-top: 1px solid #eee;
+  display: table-cell;
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table th {
+  border-bottom: 2px solid #eee;
+  vertical-align: middle;
+}
+
+.item-cell {
+  padding: 2px 12px;
+}
+
+/************FORMS & INPUTS************/
+
+.form-control {
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+input,
+select,
+textarea {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #665;
+  font-size: 15px;
+  line-height: 1.70;
+  max-width: 100%;
+  padding: 6px 12px;
+  position: relative;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #40bb93;
+  outline: medium none;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  color: #999;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.inline input,
+.inline select,
+.inline textarea {
+  display: inline-block;
+  width: auto;
+}
+
+/********** Search Bar **********/
+input[type="search"] {
+  border-width: 2px;
+  display: inline-block;
+  padding-left: 2.5em;
+  transition: width 0.4s ease-in-out 0s;
+  width: 150px;
+}
+
+input[type="search"]:focus {
+  width: 60%;
+}
+
+label[for="search"] {
+  bottom: 6px;
+  color: #999;
+  left: 1em;
+  position: absolute;
+  z-index: 1;
+}
+
+[contenteditable]:hover {
+  background-color: #f8f8f8;
+  cursor: cell;
+}
+
+[contenteditable]:focus {
+  background-color: #f8f8f8;
+}
+/* [ADOPTED and REFERENCED CODE END] */
+
+/************************************INTERACTIVE-LINE--START********************/
+
+/* The adopted and referenced responsive interactive line on the bottom of each page published by:
+Author: Volodymyr
+Retrieval date: 29/12/19,
+URL: https://codepen.io/kryvonos_v/pen/zXKYvw
+Implimentation comments divided between HTML and CSS files
+[ADOPTED and REFERENCED CODE START] */
+
+/* line image consisting of a progressive transition between two or more colors along a straight line. */
+  body {
+  	background: linear-gradient(0deg, rgba(0, 0, 200, 0.6) , rgba(0, 0, 200, 0) );
+  }
+
+  .background  {
+  	background: linear-gradient(120deg, rgba(50, 150, 100, 0.6) , rgba(0, 0, 100, 0) );
+  }
+
+  .container-line {
+  	background: linear-gradient(240deg, rgba(150, 50, 50, 0.6) , rgba(0, 0, 200, 0) );
+  	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  	padding: .5vw;
+  }
+  /* interactive text */
+
+*::after {
+  box-sizing: border-box;
+}
+
+.marquee {
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.marquee-inner {
+  display: flex;
+}
+
+.marquee-line {
+  color: #fff;
+  flex-shrink: 20;
+  margin: 0;
+  padding: 20px 15px;
+  min-width: 100%;
+  animation-name: marqueeLine;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+/* transforms static background into pure CSS animation*/
+@keyframes marqueeLine {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+  /* interactive text */
+
+/************************************INTERACTIVE-LINE---END*********************/
+
+/* #######################USER HTML START############################################################### */
+
+/************************************RADIO-BUTTONS--START***********************/
+
+/* The adopted and referenced radio buttons for user section includes hover transition effect to make it interactive published by:
+Author: Tristan White
+Retrieval date: 2/1/20,
+URL: https://codepen.io/triss90/pen/XNEre2uy
+Implimentation comments divided between HTML and CSS files
+[ADOPTED and REFERENCED CODE START] */
+
+.section {
+  height: 100%;
+  margin: 0 auto;
+  font-family: "Roboto";
+ }
+
+  .section__title {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-bottom: 3em;
+}
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  margin: 0px;
+}
+  .toggle-button label {
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: left;
+}
+  .toggle-button input {
+    display: none;
+}
+  .toggle-button__icon {
+    cursor: pointer;
+    pointer-events: none;
+}
+    .toggle-button__icon:before, .toggle-button__icon:after {
+      content: "";
+      position: absolute;
+      transition: 0.2s ease-out;
+}
+
+.toggle-button--taivas label {
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+  transition: all 0.2s; }
+  .toggle-button--taivas label:before, .toggle-button--taivas label:after {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 110px;
+    transition: all 0.2s .1s ease-out; }
+  .toggle-button--taivas label:before {
+    content: attr(data-text); }
+
+.toggle-button--taivas input:checked ~ .toggle-button__icon:before {
+  animation: wave .7s ease-out; }
+
+.toggle-button--taivas input:checked ~ .toggle-button__icon:after {
+  opacity: 1;
+  animation: zoomFadeIn .4s;
+}
+
+.toggle-button--taivas .toggle-button__icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #fff;
+  overflow: visible;
+}
+  .toggle-button--taivas .toggle-button__icon:before, .toggle-button--taivas .toggle-button__icon:after {
+    border-radius: 50%;
+}
+/*  */
+  .toggle-button--taivas .toggle-button__icon:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  .toggle-button--taivas .toggle-button__icon:after {
+    top: 4px;
+    left: 4px;
+    width: 60%;
+    height: 60%;
+    background: #61B136;
+    animation: zoomFadeOut .2s ease-out;
+    opacity: 0;
+    transition: none;
+}
+
+.toggle-button--taivas:hover input:not(:checked) ~ .toggle-button__icon {
+  animation: hover .2s; }
+
+.toggle-button--taivas:hover input:not(:checked) ~ label:before {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+
+
+/* transforms static background into pure CSS animation*/
+@keyframes zoomFadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes hover {
+  0% {
+    transform: scale(1); }
+  30% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+/* [ADOPTED and REFERENCED CODE END] */
+
+/************************************RADIO-BUTTONS--START***********************/
+
+/* #######################USER-PAGE--END############################################################# */
+
+
+/* #######################MEDIA QUERIES############################################################# */
+/* Important: media resolutions are based on most common tablet/mobile devices. However, to due to testing some speficial resolutions apply to some properties */
+
+
+@media only screen and (max-width: 250px) {
+  .header-container{
+    font-size: 10px;
+  }
+
+  .ks{
+    font-size: 20px;
+  }
+
+  .animate .un{
+    font-size: 32px;
+  }
+
+  .marquee{
+    font-size: 9px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .header-container{
+    font-size: 10px;
+  }
+
+  .ks{
+    font-size: 20px;
+  }
+
+  .animate .un{
+    font-size: 32px;
+  }
+
+  .marquee{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .toggle-button--taivas {
+    display: block;
+    width: 110px;
+    margin: 0 auto 10px auto;
+}
+
+    nav ul{
+      padding-left: 0px;
+      margin-top: 0px;
+    }
+    nav ul li {
+      width: 100%;
+      display:block;
+    }
+    nav ul li a{
+      width: 100%;
+      text-align:center;
+    }
+
+    .menu-blocks{
+      max-width: 100%;
+      padding-left: 0px;
+    }
+
+    .ks{
+      font-size: 24px;
+    }
+    .animate .un{
+      font-size: 40px;
+    }
+
+    .title-in-container{
+      grid-template-columns: 1fr;
+      grid-template-areas: 'container'
+                    'container2';
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+   .title-in-container {
+     font-size: 35px
+   }
+
+   .menu-blocks {
+     font-size: 35px;
+   }
+  }

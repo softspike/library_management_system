@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css">
+      <meta name= "viewport" content="width=device-width, initial scale=1.0">
+      <meta charset='UTF-8'>
+      <title>University of PontyBridge</title>
+  </head>
+    <body>
+        <script src="booksFuncs.js"></script>
+        <!--* The adopted and referenced background animation has been published by:
+                * Author: Manuel Pinto
+                * Retrieval date: 21/12/19,
+                * URL: https://codepen.io/P1N2O/pen/pyBNzX
+                * Implimentation comments divided between HTML and CSS files
+                -[ADOPTED and REFERENCED CODE START]-->
+          <div class="ba"></div>
+          <div class="ba ba2"></div>
+          <div class="ba ba3"></div>
+          <div class="content"></div>
+          <!-- [ADOPTED and REFERENCED CODE END] -->
+
+        <header class="header-container">
+          <!-- cotains the interractive text -->
+                 <span class="un unbreakable">University of PontyBridge</span>
+                <div class="ks">Library Services</div>
+        </header>
+
+        <section class="title-in-container">
+          <!--* The adopted and referenced menu selection-tabs including hover transition effect has been published by:
+                  * Author: Nathan Long
+                  * Retrieval date: 21/12/19,
+                  * URL: https://codepen.io/nathanlong/pen/MwOpxj
+                  * Implimentation comments divided between HTML and CSS files
+                  -[ADOPTED and REFERENCED CODE START]-->
+          <nav>
+            <ul>
+              <li><a href="user.html" data-hover="users section">users section</a></li>
+              <li><a href="loans.html" data-hover="loans section">loans section</a></li>
+              <li><a href="books.html" data-hover="books section">books section</a></li>
+            </ul>
+          </nav>
+          <!-- [ADOPTED and REFERENCED CODE START] -->
+
+          <!--* The adopted and referenced carousel image player/slideshow has been published by:
+                  * Author: Anca Spatariu,
+                  * Retrieval date: 21/12/19,
+                  * URL: https://codepen.io/ancaspatariu/pen/WpQYOP?fbclid=IwAR1v-acBZM2SesSi8DIhhYYtlPV7R46RDOgOpTziTTNCy7GA3wbRZfZd4F4
+                  * Implimentation comments divided between HTML and CSS files
+                  -[ADOPTED and REFERENCED CODE START]-->
+            <nav class="carousel"> <!--Added a grid area, in order to position and style in one row with with selection-tabs -->
+                <ul class="slides">
+                  <input type="radio" name="radio-buttons" id="img-1" checked />
+                    <li class="slide-container">
+                        <div class="slide-image">
+                            <img src="36882682751_5eb95dcdcc_o.jpg" alt="Engineering at Cambridge">
+                            <!-- Engineering at Cambridge by Hari Patel & James Talbot: Building on Springs, Lego Outreach (CC BY-NC-ND 2.0).[Online]. [Date accessed: 9-1-20]. Source link available: https://www.flickr.com/photos/cambridgeuniversity-engineering/-->
+                        </div>
+                          <!-- .carousel-controls includes "arrow -indicators" what what allows the user to page between them -->
+                        <div class="carousel-controls">
+                            <label for="img-3" class="prev-slide">
+                              <!-- rsaquo enity I will display the previous picture -->
+                                <span>&lsaquo;</span>
+                            </label>
+                            <label for="img-2" class="next-slide">
+                              <!-- rsaquo enity I will display the next picture -->
+                              <span>&rsaquo;</span>
+                            </label>
+                        </div>
+                    </li>
+                    <input type="radio" name="radio-buttons" id="img-2" />
+                    <li class="slide-container">
+                        <div class="slide-image">
+                            <img src="4381948277_66eb46cc2e_o.jpg" alt="Dragoon Jumping and Double Spears Technique">
+                            <!-- Dragoon Jumping and Double Spears Technique by Kevin Thai (CC BY-ND 2.0).[Online]. [Date accessed: 9-1-20]. Source link available: https://www.flickr.com/photos/kthai/-->
+                        </div>
+                        <div class="carousel-controls">
+                            <label for="img-1" class="prev-slide">
+                                <span>&lsaquo;</span>
+                            </label>
+                            <label for="img-3" class="next-slide">
+                                <span>&rsaquo;</span>
+                            </label>
+                        </div>
+                    </li>
+                    <input type="radio" name="radio-buttons" id="img-3" />
+                    <li class="slide-container">
+                        <div class="slide-image">
+                            <img src="460865053_a3b44115ce_o.jpg" alt="Science Staff">
+                            <!-- Science Staff by Lonnon Foster (CC BY-NC 2.0).[Online]. [Date accessed: 9-1-20]. Source link available: https://www.flickr.com/photos/lonnon/-->
+                        </div>
+                        <div class="carousel-controls">
+                            <label for="img-2" class="prev-slide">
+                                <span>&lsaquo;</span>
+                            </label>
+                            <label for="img-1" class="next-slide">
+                                <span>&rsaquo;</span>
+                            </label>
+                        </div>
+                    </li>
+                    <!-- .carousel-dots class contains the dots are called "carousel-indicators" what allows the user to page between them -->
+                    <div class="carousel-dots">
+                        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+                        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+                        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+                    </div>
+                </ul>
+            </nav>
+        </section>
+        <!-- [ADOPTED and REFERENCED CODE END] -->
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Server Test</title>
+</head>
+<body>
+    <!-- Here's where our output will go -->
+    <ul id="authors_list">
+
+    </ul>
+    <input type="button" value="Change Author 1 to 'Testy Test'" id="change">
+    <script>
+        // the URI for our local node Library Server
+        const base_url = "http://127.0.0.1:3000";
+
+        // a function that gets the list of authors and adds them to the list
+        function updateAuthorList() {
+
+            // set up and make a GET request to the Authors endpoint
+            var xhttp = new XMLHttpRequest();
+            var authors_url = "/authors";
+
+            var query_url = base_url + authors_url;
+            xhttp.open('GET', query_url);
+
+            // when the request is finished, go through the return data
+            // and add each author to the list
+            xhttp.addEventListener('load', function(){
+
+                var author_list= document.querySelector('#authors_list');
+                // clear the list of existing data
+                author_list.innerHTML = "";
+
+                var authors = JSON.parse(this.response);
+                // loop through all authors
+                authors.forEach(function(author){
+                    // create a new list item for each one and add to the list
+                    var text = document.createTextNode(author.name);
+                    var list_item = document.createElement('li');
+                    list_item.appendChild(text);
+                    author_list.appendChild(list_item);
+                })
+            });
+            xhttp.send();
+        }
+
+        // when the user clicks the button, make a PUT request to update Author 1
+        document.querySelector('#change').addEventListener('click', function(){
+
+            var author_1_url = base_url + "/authors/1"
+
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.open("PUT", author_1_url);
+            // remember to set the content type header
+            xhttp.setRequestHeader('Content-Type', 'application/json')
+
+            var params = {
+                name: "Testy Test"
+            };
+
+            // when the PUT request is finished, clear and update the author list
+            xhttp.addEventListener('load', function(){
+                updateAuthorList();
+            });
+            
+            xhttp.send(JSON.stringify(params));
+
+        });
+
+        updateAuthorList();
+
+
+    </script>
+
+</body>
+</html>

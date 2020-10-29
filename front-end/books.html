@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css">
+      <meta name= "viewport" content="width=device-width, initial scale=1.0">
+
+      <meta charset='UTF-8'>
+      <title>University of PontyBridge</title>
+  </head>
+    <body>
+      <header class="staff-header-container">
+        <!-- cotains the interractive text appearing on the header when program is run -->
+              <div class="unbreakable-container">
+                <div class="unbreakable">
+                  <span class="un">University of PontyBridge</span>
+                </div>
+                <div class="ks">Library Services</div>
+              </div>
+              <div><a href ="index.html" class="btn-5">Home</a></div>
+        </header>
+        <!--* The adopted and referenced menu selection-tabs including hover transition effect has been published by:
+                * Author: Nathan Long
+                * Retrieval date: 21/12/19,
+                * URL: https://codepen.io/nathanlong/pen/MwOpxj
+                * Implimentation comments divided between HTML and CSS files
+                -[ADOPTED and REFERENCED CODE START]-->
+        <section class="menu-blocks">
+          <nav>
+            <ul>
+              <li><a href="user.html" data-hover="users section">users section</a></li>
+              <li><a href="loans.html" data-hover="loans section">loans section</a></li>
+              <li><a href="books.html" data-hover="books section">books section</a></li>
+            </ul>
+          </nav>
+        </section>
+      <!-- [ADOPTED and REFERENCED CODE END] -->
+
+
+<!--  ¬¬¬¬¬¬¬¬¬¬SEARCH A BOOK TABLE¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-->
+        <section class="container-table">
+        <!--* The adopted and referenced responsive data table published by:
+                * Author: Drew
+                * Retrieval date: 29/12/19,
+                * URL: https://codepen.io/DrewRyan/details/YZxYER
+                * Implimentation comments divided between HTML and CSS files
+                -[ADOPTED and REFERENCED CODE START]-->
+          <!--  Introduction  -->
+          <h1 class="special-font">Books Section</h1>
+          <h2>Search for books: by title or author</h2>
+          <div class="form-control">
+          <label><i class="icon-search"></i></label>
+            <!-- for="search"> -->
+          <!-- The search bar checks title and authors text field and the search button in the table and shows matches. -->
+            <input id="SearchTitle" class="table-filter" type="search" data-table="advanced-web-table" placeholder="Title">
+            <input id="SearchAuthors" class="table-filter" type="search" data-table="advanced-web-table" placeholder="Authors">
+            <button id="searchBookSubmit">Search</button>
+          </div>
+          <!--  Table  -->
+          <div class="table-responsive">
+            <table id="ordering-table" class="advanced-web-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>ISBN</th>
+                  <th>Authors</th>
+                  <th>Edit a Book</th>
+                  <th>Note Column</th>
+                </tr>
+              </thead>
+              <!-- added to filter searches -->
+              <tbody id="your-table-body-id">
+              </tbody>
+            </table>
+          </div>
+        </section>
+<!-- `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` -->
+
+<!--  ¬¬¬¬¬¬¬¬¬¬ADD A BOOK TABLE¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-->
+<!-- this table has been reconstruced based on the above one to add new books by placing four placeholders for required information in order to proceed the operation-->
+      <section class="add-book-table">
+              <!--  Introduction  -->
+              <h1>Add a Book</h1>
+              <!--  Table  -->
+              <table class="table-responsive">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>ISBN</th>
+                      <th>Author</th>
+                      <th>Add a Book</th>
+                    </tr>
+                  </thead>
+                  <tbody class="data-table">
+                    <tr>
+                      <td>
+                          <input class="addBookInput" type='text' placeholder="Title">
+                      <td>
+                          <input class="addBookInput" type='text' placeholder="ISBN">
+                      <td>
+                          <input class="addBookInput" type='text' placeholder="Author">
+                      </td>
+                      <td>
+                        <!-- allow to add a books in to the system -->
+                          <button id="addBookSubmit">Submit</button>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+        </section>
+<!-- `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` -->
+
+<!--  ¬¬¬¬¬¬¬¬¬¬EDIT A BOOK TABLE¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-->
+      <!-- this table has been reconstruced based on the above one to add new books by placing four placeholders for required information in order to proceed the operation-->
+            <section class="add-book-table">
+                    <!--  Introduction  -->
+                    <h1>Edit a Book’s Name, ISBN or Author</h1>
+                    <!--  Table  -->
+                    <table class="table-responsive">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>ISBN</th>
+                            <th>Author</th>
+                            <th>Edit a Book</th>
+                          </tr>
+                        </thead>
+                        <tbody class="data-table">
+                          <tr>
+                            <td>
+                                <input class="addBookInput" type='text' placeholder="ID">
+                            <td>
+                                <input class="addBookInput" type='text' placeholder="Title">
+                            <td>
+                                <input class="addBookInput" type='text' placeholder="ISBN">
+                            <td>
+                                <input class="addBookInput" type='text' placeholder="Author">
+                            </td>
+                            <td>
+                              <!-- allow to add a books in to the system -->
+                                <button>Submit</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+              </section>
+<!-- `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` -->
+
+<!--  ¬¬¬¬¬¬¬¬¬¬DELETE A BOOK TABLE¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-->
+        <section class="add-book-table">
+                <!--  Introduction  -->
+                <h1>Delete a Book</h1>
+                <!--  Table  -->
+                <table class="table-responsive">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                      </tr>
+                    </thead>
+                    <tbody class="data-table">
+                      <tr>
+                        <td>
+                            <input class="deleteBookInput" type='text' placeholder="Book ID">
+                        </td>
+                        <td>
+                          <!-- allow to remove a book from the system by books ID -->
+                          <button id="SubmitDeleteBook">Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+          </section>
+          <!-- [ADOPTED and REFERENCED CODE END] -->
+<!-- `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` -->
+
+      <footer class="interactive">
+        <!--* The adopted and referenced animated footer line has been published by:
+                * Author: Manuel Pinto
+                * Retrieval date: 23/12/19,
+                * URL: https://codepen.io/kryvonos_v/pen/zXKYvw
+                * Implimentation comments divided between HTML and CSS files
+                -[ADOPTED and REFERENCED CODE START]-->
+        <div class="background">
+            <div class="container-line">
+              <div class="marquee">
+                <div class="marquee-inner">
+                  <p class="marquee-line">Welcome to a desirable locally global University</p>
+                  <p class="marquee-line">Welcome to a desirable locally global University</p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ADOPTED and REFERENCED CODE END] -->
+      </footer>
+
+      <script src="booksFuncs.js"></script>
+    </body>
+</html>
